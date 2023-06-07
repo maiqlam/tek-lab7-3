@@ -32,7 +32,8 @@ Hamtaro.wheelRun();
 Hamtaro.eatFood();
 console.log(Hamtaro.getPrice());
 
-/* Create a `Person` class with the following requirements met:
+/* Person Class
+Create a `Person` class with the following requirements met:
 - Attributes:
     - `name` - set `name` from a parameter in the constructor method.
     - `age`- initially 0
@@ -88,7 +89,7 @@ class Person {
         this.bankAccount += 10;
     }
     buyHamster(hamster) {
-        hamster = new Hamster("Mr. Smore"); 
+        hamster = new Hamster(hamster); 
         hamster.owner = this.name;
         this.hamsters.push(hamster.name);
         this.mood += 10;
@@ -99,6 +100,121 @@ class Person {
 const Mai = new Person("Mai")
 Mai.eat();
 Mai.ageUp();
-Mai.buyHamster();
+Mai.buyHamster("Mr. Smore");
 console.log(Mai);
+// Person {
+//     name: 'Mai',
+//     age: 1,
+//     height: 1,
+//     weight: 2,
+//     mood: 10,
+//     hamsters: [ 'Mr. Smore' ],
+//     bankAccount: -5
+//   }
 
+
+// Create a Story
+// 1. Instantiate a new `Person` named Timmy.
+const Timmy = new Person("Timmy")
+
+/* 
+2. Age Timmy five years.
+3. At this point, Timmy's a little bummed. As a precocious child, he feels he's "seen it all" already. Have him eat five times to improve his mood.
+4. Now Timmy's a little heavier than he wants to be. Kindergarten's coming up and he wants to look good. Have him exercise five times. */
+for (let i = 0; i < 5; i++) {
+    Timmy.ageUp();
+    Timmy.eat();
+    Timmy.exercise();
+};
+// console.log(Timmy);
+// Person {
+//     name: 'Timmy',
+//     age: 5,
+//     height: 5,
+//     weight: 5,
+//     mood: 0,
+//     hamsters: [],
+//     bankAccount: 50
+//   }
+
+// 5. Age Timmy 9 more years.
+for (let i = 0; i < 9; i++) {
+    Timmy.ageUp();
+};
+// console.log(Timmy);
+// Person {
+//     name: 'Timmy',
+//     age: 14,
+//     height: 14,
+//     weight: 14,
+//     mood: -9,
+//     hamsters: [],
+//     bankAccount: 140
+//   }
+
+// 6. Create a `Hamster` named "Gus."
+const Gus = new Hamster("Gus")
+// 7. Set Gus's owner to the string "Timmy."
+Gus.owner = "Timmy";
+// 8. Have Timmy "buy" Gus.
+Timmy.buyHamster("Gus")
+
+// console.log(Timmy);
+// Person {
+//     name: 'Timmy',
+//     age: 14,
+//     height: 14,
+//     weight: 14,
+//     mood: 1,
+//     hamsters: [ 'Gus' ],
+//     bankAccount: 125
+//   }
+
+// console.log(Gus);
+// Hamster { owner: 'Timmy', name: 'Gus', price: 15 }
+
+// 9. Age Timmy more 15 years.
+for (let i = 0; i < 15; i++) {
+    Timmy.ageUp();
+};
+
+// console.log(Timmy);
+// Person {
+//     name: 'Timmy',
+//     age: 29,
+//     height: 29,
+//     weight: 29,
+//     mood: -14,
+//     hamsters: [ 'Gus' ],
+//     bankAccount: 275
+//   }
+
+// 10. Have Timmy eat twice.
+Timmy.eat();
+Timmy.eat();
+
+// console.log(Timmy);
+// Person {
+//     name: 'Timmy',
+//     age: 29,
+//     height: 29,
+//     weight: 31,
+//     mood: -12,
+//     hamsters: [ 'Gus' ],
+//     bankAccount: 275
+//   }
+
+// 11. Have Timmy exercise twice.
+Timmy.exercise();
+Timmy.exercise();
+
+// console.log(Timmy);
+// Person {
+//     name: 'Timmy',
+//     age: 29,
+//     height: 29,
+//     weight: 29,
+//     mood: -12,
+//     hamsters: [ 'Gus' ],
+//     bankAccount: 275
+//   }
