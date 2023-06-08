@@ -218,3 +218,33 @@ Timmy.exercise();
 //     hamsters: [ 'Gus' ],
 //     bankAccount: 275
 //   }
+
+
+/* Chefs Make Dinners
+- `Chef` should be a factory of `Dinner`.
+- Add a constructor to `Dinner` that sets the string properties: `appetizer`, `entree`, and `dessert`.
+- Add a method on `Chef` that takes three arguments and returns a new `Dinner` based on those arguments.
+- Have the `Chef` create three `Dinner`s, log the `Dinner`s. */
+
+class Dinner {
+    constructor(appetizer, entree, dessert) {
+        this.appetizer = appetizer;
+        this.entree = entree;
+        this.dessert = dessert;
+    }
+}
+
+class Chef {
+    prepare(appetizer, entree, dessert) {
+        return new Dinner(appetizer, entree, dessert)
+    }
+}
+
+const chefMai = new Chef();
+const dinner1 = chefMai.prepare('bread and butter', 'spaghetti', 'tiramisu');
+const dinner2 = chefMai.prepare('spring rolls', 'pho bo vien', 'che 3 mau');
+const dinner3 = chefMai.prepare('bread rolls', 'brisket', 'ice cream');
+
+console.log(dinner1);
+console.log(dinner2);
+console.log(dinner3);
